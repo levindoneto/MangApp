@@ -1,6 +1,6 @@
 # Trabalho de Engenharia de Software [2016/2]
 
-__Autores:__ Levindo Gabriel Taschetto Neto, Eduardo Stein Brito, Felipe Barbosa Tormes e Luis Gustavo Mollmann dos Santos.
+__Autores:__ Eduardo Stein Brito, Felipe Barbosa Tormes, Levindo Gabriel Taschetto Neto e Luis Gustavo Mollmann dos Santos.
 
 
 O sistema a ser desenvolvido é uma aplicação web que permita conectar usuários que queiram trocar mangás de uma maneira fácil e eficaz.
