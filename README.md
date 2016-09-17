@@ -24,7 +24,7 @@ O sistema a ser desenvolvido é uma aplicação web que permita conectar usuári
 
 
 ###Partindo do administrador
-* Banir 
+* Banir
 * Desbanir usuário
 
 
@@ -53,7 +53,7 @@ Pós condições: O sistema salva os dados do novo usuário no banco de dados.
 1. Usuário entra no sistema.
 2. Usuário clica no botão “Cadastrar novo usuário”.
 4. Usuário preenche todas informações do formulário.
-5. Usuário clica no botão “Realizar cadastro”. 
+5. Usuário clica no botão “Realizar cadastro”.
 
 ##### Sistema
 3. Sistema abre o formulário de cadastro de novo usuário.
@@ -65,9 +65,8 @@ Pós condições: O sistema salva os dados do novo usuário no banco de dados.
 1. Usuário entra no sistema.
 2. Usuário clica no botão “Cadastrar novo usuário”.
 4. Usuário não preenche todas informações do formulário.
-5. Usuário clica no botão “Realizar cadastro”. 
+5. Usuário clica no botão “Realizar cadastro”.
 
 ##### Sistema
 3. Sistema abre o formulário de cadastro.
-6. Sistema informa erro e avisa quais 
-
+6. Sistema informa erro e avisa quais
