@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html >
+<html  ng-app="webapp">
+
   <head>
     <meta charset="UTF-8">
     <title>Sign-Up/Login Form</title>
@@ -11,7 +12,8 @@
         <link rel="stylesheet" href="css/style.css">
 
 
-
+   <script src="js/angular.min.js"></script>
+    <script src="js/controller_signup.js"></script>
 
   </head>
 
@@ -24,25 +26,26 @@
         <li class="tab"><a href="#login">Log In</a></li>
       </ul>
 
-      <div class="tab-content">
+      <div class="tab-content" ng-controller="signUp">
         <div id="signup">
           <h1>Cadastre-se gratuitamente</h1>
 
-          <form>
+          <form ng-submit="signup(user)">
 
           <div class="top-row">
             <div class="field-wrap">
               <label>
                 Nome<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" />
+              <input ng-model="user.name" type="text" required autocomplete="off" />
+
             </div>
 
             <div class="field-wrap">
               <label>
                 Sobrenome<span class="req">*</span>
               </label>
-              <input type="text"required autocomplete="off"/>
+              <input ng-model="user.surname" type="text"required autocomplete="off"/>
             </div>
           </div>
 
@@ -50,17 +53,17 @@
             <label>
               E-mail<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input ng-model="user.email" type="email"required autocomplete="off"/>
           </div>
 
           <div class="field-wrap">
             <label>
               Senha<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input ng-model="user.password" type="password"required autocomplete="off"/>
           </div>
 
-          <button type="submit" class="button button-block"/>Comece agora!</button>
+          <button  type="submit" class="button button-block"/>Comece agora!</button>
 
           </form>
 

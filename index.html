@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  ng-app="webapp">
 
 <head>
 
@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Mangapp - Tornando sua troca de mangás na sua melhor experiência!</title>
-
+	
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -21,14 +21,15 @@
 
     <!-- Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
-
+    
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="js/angular.min.js"></script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -93,7 +94,7 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Sobre Mangapp</h2>
+                <h2>Sobre Mangapp {{a}}</h2>
                 <p>Mangapp é um aplicativo web, no qual você pode pesquisar mangás ofertados por outros usuários para trocá-los pelos seus</p>
                 <p>Oferte seus mangás e receba propostas de outros usuários!</p>
                 <p>Desfrute de plataforma que oferece total segurança na troca, com sistema de avaliação de usuários!</p>
