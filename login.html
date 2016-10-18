@@ -56,6 +56,13 @@
             <input ng-model="user.email" type="email"required autocomplete="off"/>
           </div>
 
+	 <div class="field-wrap">
+            <label>
+              CPF<span class="req">*</span>
+            </label>
+            <input pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"  title="Type CPF in the following format: xxx.xxx.xxx-xx" ng-model="user.CPF" type="cpf"required autocomplete="off"/>
+          </div>
+
           <div class="field-wrap">
             <label>
               Senha<span class="req">*</span>
