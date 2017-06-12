@@ -182,19 +182,9 @@ $scope.readNotification = function(){
             state: "addmanga"
         },
         {
-            title: "Pesquisar Mangás",
-            icon: "search",
-            state: "search"
-        },
-        {
             title: "Trocas",
             icon: "exchange",
             state: "trades"
-        },
-        {
-            title: "Lista de Desejos",
-            icon: "heart",
-            state: "wishlist"
         },
         {
             title: "Administrator",
