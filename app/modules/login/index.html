@@ -1,0 +1,138 @@
+
+<style>
+    /*Background*/
+    body {
+        background-image: url("img/downloads-bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+<div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        Menu <i class="fa fa-bars"></i>
+    </button>
+    <a class="navbar-brand page-scroll" href="../../../../index.html">
+        <i> <img src="img/mangapp-favicon.png"  height="30" width="30"> </i> <span class="headerLogin">Mangapp</span>
+    </a>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <!-- <li>
+            <a class="headerLogin" href="index.html#about" target="_blank">Sobre</a>
+        </li>-->
+        <li>
+            <a class="headerLogin"href="mailto:mangapp@mangapp.com">Contato</a>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="container margin-top-80">
+    <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2" data-ng-show="vm.signIn">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+                Entre
+            </div>
+            <div class="panel-body">
+                <form name="vm.loginForm" class="form-horizontal" data-ng-submit="vm.login(vm.getUser);">
+                    <div class="col-xs-12 input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="text" class="form-control" name="username" value="admin" placeholder="E-mail" data-ng-model="vm.getUser.Email" required>
+                    </div>
+                    <div class="col-xs-12 input-group margin-top-20">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Senha" data-ng-model="vm.getUser.Password" required>
+                    </div>
+                    <div class="col-xs-12 margin-top-20">
+                        <!--
+                            <span class="pull-right">
+                                 <a href="#">Esqueceu a senha?</a>
+                            </span>
+                        -->
+                    </div>
+
+
+
+                        <button onclick="window.location.href='dashboard.html' type="submit" class="btn btn-block btn-primary">
+                            Logar <span class="glyphicon glyphicon-play"></span>
+                        </button>
+
+                        <button type="button" class="btn btn-block btn-primary" data-ng-click="vm.signIn=false;">
+                            Cadastrar <span class="glyphicon glyphicon-hand-up"></span>
+                        </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" data-ng-show="!vm.signIn">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+                Cadastrar
+            </div>
+            <div class="panel-body">
+                <form name="vm.registrationForm" data-ng-submit="vm.register();">
+                    <div class="form-group">
+                        <label for="email" class="col-md-12 control-label">Email</label>
+                        <div class="col-md-12">
+                            <input type="email" class="form-control" name="email" placeholder="Endereço de E-mail" required data-ng-model="vm.setUser.Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-md-12 control-label margin-top-10">Nome</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="lastname" placeholder="Nome Completo" required data-ng-model="vm.setUser.Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-12 control-label margin-top-10">Senha</label>
+                        <div class="col-md-12">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required data-ng-model="vm.setUser.Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpasswd" class="col-md-12 control-label margin-top-10">Confirme a Senha</label>
+                        <div class="col-md-12">
+                            <input type="password" class="form-control" name="cpasswd" placeholder="Confirme a Senha" required data-ng-model="vm.setUser.confirmPassword">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf" class="col-md-12 control-label margin-top-10">CPF</label>
+                        <div class="col-md-12">
+                            <input type="numbers" class="form-control" name="cpf" placeholder="CPF (11 dígitos sem pontuação)" required data-ng-model="vm.setUser.CPF" pattern="[0-9]{11}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addr" class="col-md-12 control-label margin-top-10">Endereço</label>
+                        <div class="col-md-12">
+                            <input type="address" class="form-control" name="address" placeholder="Endereço (Rua, número, bairro, cidade, estado, país)" required data-ng-model="vm.setUser.addr">
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 margin-top-20">
+                        <div class="col-xs-6 padding-left-none">
+                            <button type="submit" class="btn btn-block btn-primary">
+                                Registrar <span class="glyphicon glyphicon-play"></span>
+                            </button>
+                        </div>
+                        <div class="col-xs-6 padding-right-none">
+                            <button type="button" class="btn btn-block btn-primary" data-ng-click="vm.signIn=true;">
+                                Cancelar <span class="glyphicon glyphicon-move"></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

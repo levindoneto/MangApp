@@ -1,166 +1,224 @@
 <!DOCTYPE html>
-<html lang="en"  ng-app="webapp">
-
+<html>
 <head>
+  <link rel="shortcut icon" href="img/mangapp-favicon.png" type="img/x-icon"> <!-- favicon -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/utils.css" type="text/css">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <title>Mangapp - Tornando sua troca de mangás na sua melhor experiência!</title>
 
-    <title>Mangapp - Tornando sua troca de mangás na sua melhor experiência!</title>
-	
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <!-- Custom Fonts -->
+  <link href="fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-    <!-- Theme CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-    
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/angular.min.js"></script>
-</head>
+  <!-- Theme CSS -->
+  <link href="css/grayscale.css" rel="stylesheet">
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <body  id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!--Scripts-->
+    <script src="/plugins/vendor/jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugins/bootstrap-slider/bootstrap-slider.js"></script>
+
+
+    <!--Common-->
+
+    <!-- Pre-loader, usado porque a pagina carregada toda junta pode pesar em algumas internet's mais lentas -->
+    <style type="text/css">
+    #preload
+    {
+      /* Centralizando pre-loader*/
+      margin-top: 200px;
+      margin-bottom: 250px;
+      background: #1c1c1c /*Cinza escuro */
+      display: block ;
+    }
+    #posload
+    {
+      display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    function muda_p_carregado()
+    {
+      document.getElementById("posload").style.display = "block";
+      document.getElementById("preload").style.display = "none";
+    }
+    </script>
+  </head>
+
+
+  <body onload="muda_p_carregado()">
+    <div id="preload" class="cssload-loader">
+      <!-- Pre-loader fica aqui -->
+      <div class="cssload-inner cssload-one"></div>
+      <div class="cssload-inner cssload-two"></div>
+      <div class="cssload-inner cssload-three"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div id="posload" class="container-fluid">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Mangapp</span>
-                </a>
-            </div>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+              <i> <img src="img/mangapp-favicon.png"  height="20" width="20"> </i> <span class="light">Mangapp</span>
+            </a>
+          </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#login">Cadastre-se/Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+              <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+              <li class="hidden">
+                <a href="#page-top"></a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#about">Sobre</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#login">Cadastre-se/Login</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="#contact">Contato</a>
+              </li>
+            </ul>
+          </div>
+          </div>
+          <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-    </nav>
+      </nav>
 
-    <!-- Intro Header -->
-    <header class="intro">
-<div class="overlay"></div>
+
+
+
+      <!-- Intro Header -->
+      <header class="intro">
+        <div class="overlay"></div>
         <div class="intro-body">
-            <div class="container">
-                <div class="row">
+          <div class="container">
+            <div class="row">
 
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Mangapp</h1>
-                        <p class="intro-text">Busque, encontre e troque seus mangás!
-                            <br>Faça login agora mesmo!</p>
-                        <a href="#login" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
+              <div class="col-md-8 col-md-offset-2">
+                <h1 class="brand-heading">Mangapp</h1>
+                <p class="intro-text">Busque, encontre e troque seus mangás!
+                  <br>Faça login agora mesmo!</p>
+                  <a href="#login" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                  </a>
 
-                    </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </header>
+          </div>
+        </header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
+        <!-- About Section -->
+        <section id="about" class="container content-section text-center">
+          <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Sobre Mangapp {{a}}</h2>
-                <p>Mangapp é um aplicativo web, no qual você pode pesquisar mangás ofertados por outros usuários para trocá-los pelos seus</p>
-                <p>Oferte seus mangás e receba propostas de outros usuários!</p>
-                <p>Desfrute de plataforma que oferece total segurança na troca, com sistema de avaliação de usuários!</p>
+              <h2>Sobre Mangapp!</h2>
+              <p>Mangapp é um aplicativo web, no qual você pode pesquisar mangás ofertados por outros usuários para trocá-los pelos seus</p>
+              <p>Oferte seus mangás e receba propostas de outros usuários!</p>
+              <p>Desfrute de plataforma que oferece total segurança na troca, com sistema de avaliação de usuários!</p>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- Download Section -->
-    <section id="login" class="content-section text-center">
-        <div class="login-section">
+        <section id="login" class="content-section text-center">
+          <div class="login-section">
             <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-
-                    <iframe src="login.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" width="100%" height="800px">
-                        </iframe>
-                </div>
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="overlay"></div>
+                <a type="button"  class="button" style="vertical-align:middle;  color: white "  href="dashboard.html"> <span>Entre agora </span> </a>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
+        <!-- Contact Section -->
+        <section id="contact" class="container content-section text-center">
+          <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Entre em contato</h2>
-                <p>Sinta-se a vontade de nos contatar por uma das opções abaixo</p>
-                <p><a href="#">mangapp@mangapp.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <ahref="#" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
+              <h2>Entre em contato</h2>
+              <p>Sinta-se a vontade de nos contatar por uma das opções abaixo</p>
+              <p><a href="#">mangapp@mangapp.com</a>
+              </p>
+              <ul class="list-inline banner-social-buttons">
+                <li>
+                  <a href="https://www.facebook.com/Mangapp-325911561135171/" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                </li>
+                <li>
+                  <a href="https://github.com/esbrito/mangapp-new" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                </li>
+              </ul>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
+        <!-- Footer -->
+        <footer>
+          <div class="container text-center">
             <p>Copyright &copy; Mangapp 2016</p>
-        </div>
-    </footer>
+          </div>
+        </footer>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <!--Header Files-->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type='text/css' href="css/normalize.css">
+        <link rel="stylesheet" type='text/css' href="css/style.css">
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDjAxvojQESjdCa2jX6hP3PEaa6jk3MLx4",
+          authDomain: "manga-trades.firebaseapp.com",
+          databaseURL: "https://manga-trades.firebaseio.com",
+          storageBucket: "manga-trades.appspot.com",
+          messagingSenderId: "996783263888"
+        };
+        firebase.initializeApp(config);
+        </script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
-    <!-- Theme JavaScript -->
-    <script src="js/grayscale.min.js"></script>
 
-</body>
 
-</html>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="plugins/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+        <!-- Theme JavaScript -->
+        <script src="js/grayscale.min.js"></script>
+
+      </body>
+      </html>

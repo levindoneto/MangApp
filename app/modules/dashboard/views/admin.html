@@ -1,0 +1,55 @@
+
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1 class="titleMYACC">
+        Administrator
+    </h1>
+
+</section>
+<!-- Main content -->
+<section class="content">
+    <h5 class="ReportedTrades">Trocas Reportadas</h5>
+    <div class="box-content">
+        <div class="panel panel-default">
+            <ul style="list-style-type: none;">
+                <li ng-repeat="(id, report) in reports" >
+                    <div class="box-content">
+                        <div class="panel panel-default">
+                            <span class="InfoReport"> Id do usuário que reportou: </span> <span class="InfoAboutReport"> {{report.user}} </span> </br>
+                            <span class="InfoReport"> Mensagem Reportada: </span> <span class="InfoAboutReport"> {{report.message}} </span> </br>
+                            <span class="InfoReportData"> Dados da troca: </span> </br>
+                            <span class="InfoReport"> Deadline: </span> <span class="InfoAboutReport"> {{report.trade.deadline}} </span> </br>
+                            <span class="InfoReport"> ID do Mangá do Remetente: </span> <span class="InfoAboutReport"> {{report.trade.mangaReceiverIsInterested.id}} </span> </br>
+                            <span class="InfoReport"> ID do Mangá do Destinatário: </span> <span class="InfoAboutReport"> {{report.trade.mangaSenderIsInterested.id}} </span> </br>
+                            <span class="InfoReport"> Id do Remetente: </span> <span class="InfoAboutReport"> {{report.trade.sender}} </span> </br>
+                            <span class="InfoReport"> Id do Destinatário: </span> <span class="InfoAboutReport"> {{report.trade.receiver}} </span> </br>
+                            <span class="InfoReport"> Nome do Remetente: </span> <span class="InfoAboutReport"> {{report.senderName}} </span> </br>
+                            <span class="InfoReport"> Nome do Destinatário: </span> <span class="InfoAboutReport"> {{report.receiverName}} </span> </br>
+                            <span class="InfoReport"> CPF do Remetente: </span> <span class="InfoAboutReport"> {{report.senderCPF}} </span> </br>
+                            <span class="InfoReport"> CPF do Destinatário: </span> <span class="InfoAboutReport"> {{report.receiverCPF}} </span> </br>
+                            <span class="InfoReport"> Email do Remetente: </span> <span class="InfoAboutReport"> {{report.senderEmail}} </span> </br>
+                            <span class="InfoReport"> Email do Destinatário: </span> <span class="InfoAboutReport"> {{report.receiverEmail}} </span> </br>
+                            <span class="InfoReport"> Estado: </span> <span class="InfoAboutReport"> {{report.trade.state}} </br>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+
+    <h5 class="AdmTitle">Banir Usuário</h5>
+    <span class="Adm"> Digite o CPF para Banir: </span><input type="text" placeholder="CPF do Usuário"ng-model="cpfToBan">
+    <button class="BanUser" ng-click="ban(cpfToBan)" >Banir
+    </button>
+    <h5 class="AdmTitle">Desbanir Usuário</h5>
+    <span class="Adm"> Digite o CPF para Desbanir: </span> <input type="text" placeholder="CPF do Usuário"ng-model="cpfToUnban">
+    <button class="DisBanUser" ng-click="unban(cpfToUnban)" >Desbanir
+    </button>
+
+
+
+</section><!-- /.content -->

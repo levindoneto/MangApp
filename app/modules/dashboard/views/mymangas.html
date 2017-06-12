@@ -1,0 +1,63 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1 class="titleMYACC">
+        Meus Mangás
+    </h1>
+
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Info boxes -->
+
+    <div class="box-content">
+        <div class="panel panel-default">
+            <ul style="list-style-type: none;">
+                <li ng-repeat=" manga in mangas | filter:{ userUid: userDB.uid }" > <!-- Mangas is a list  provided by the controller-->
+                    <h3>
+                        {{manga.name}} - {{manga.year}} <button type="button" data-toggle="modal" ng-click="modal(manga)"  data-target="#popUp" class="fa fa-info-circle BtnMyMangas"></button> <button ng-click="remove(manga)" type="button" class="fa fa-trash BtnMyMangas"> </button>
+                    </h3>
+
+                    <div id="popUp" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="BtnCloseMyMangas close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Detalhes</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h3 align="center">
+                                        Nome: {{modalmanga.name}} </br>
+                                        Foto:<br>
+                                        <img class="ImgMyMangas" src="{{imageManga}}" height="300px" width="auto" /><br>
+                                        <span class="MyInfo"> Descrição:        </span> <span class="MyInfoP"> {{modalmanga.desc}}       </span></br>
+                                        <span class="MyInfo"> Coleção:          </span> <span class="MyInfoP"> {{modalmanga.collection}} </span></br>
+                                        <span class="MyInfo"> Número de Edição: </span> <span class="MyInfoP"> {{modalmanga.ednumb}}     </span></br>
+                                        <span class="MyInfo"> Editora:          </span> <span class="MyInfoP" >{{modalmanga.publisher}}   </span></br>
+                                        <span class="MyInfo"> Estado:           </span>
+
+                                        <div ng-switch on="modalmanga.state">
+
+
+                                            <p ng-switch-when="great">Usado - Ótimo (Sem avarias, lido poucas vezes)</p>
+                                            <p ng-switch-when="good">Usado - Bom (Lido varias vezes, pequenas marcas de uso)</p>
+                                            <p ng-switch-when="used">Usado - Regular(Folhas soltas ou faltando, marcas de maus tratos)</p>
+                                            <p ng-switch-when="new">Novo</p>
+                                            <p ng-switch-when="not opened">Lacrado</p>
+                                            <p ng-switch-default>Nenhuma condição fornecida</p>
+                                        </div>
+                                        Ano: {{modalmanga.year}}<br>
+                                    </h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="BtnCloseMyMangas" data-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section><!-- /.content -->

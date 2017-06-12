@@ -1,72 +1,39 @@
-# Trabalho de Engenharia de Software [2016/2]
+# Angular Bootstrap Dashboard
+Angular Bootstrap Dashboard is a web dashboard application based on Bootstrap and AngularJS. 
+All components included in this dashboard template has been developed to bring all the potential of HTML5 and Bootstrap plus a set of new features (JS and CSS) ideal for your next dashboard admin theme or admin web app project. 
+Angular Bootstrap Dashboard can be used in any type of web applications dashboard. 
+Angular Bootstrap Dashboard uses ui-router for routing purposes.
 
-__Autores:__ Eduardo Stein Brito, Felipe Barbosa Tormes, Levindo Gabriel Taschetto Neto e Luis Gustavo Mollmann dos Santos.
+## Get The Dashboard
 
+* [Demo] (http://dashboard.ranjithprabhu.in)
 
-O sistema a ser desenvolvido é uma aplicação web que permita conectar usuários que queiram trocar mangás de uma maneira fácil e eficaz.
+* [Download Source]  (https://github.com/ranjithprabhuk/Angular-Bootstrap-Dashboard/archive/master.zip)
 
+* Username: admin
 
-## Lista de casos de uso
+* Password: admin
 
-### Partindo de usuário comum
-* Criar conta de usuário
-* Entrar no sistema (log in)
-* Criar anúncio
-* Adicionar mangá à lista de desejos
-* Ver histórico
-* Pesquisar anúncio (com filtros)
-* Realizar troca
-* Mostrar interesse em um anúncio
-* Ver status da troca
-* Confirmar ou cancelar troca
-* Submeter código de rastreio
-* Avaliar troca
+## Features
+* Multiple Themes
+* Multiple Layouts
+* Works in All Modern Browsers
 
+## Plugins used
+* jQuery
+* jQuery Knob
+* Chart.js
+* Owl Carousel
 
-###Partindo do administrador
-* Banir
-* Desbanir usuário
+## Usage
+* Download and customize the application as per your requirements.
 
+## About Author
+* [Author URL] (http://ranjithprabhu.in)
 
-### Partindo do sistema
-* Notificar usuário
-
-
-## Diagrama de Casos de uso
-
-![Diagrama de Casos de Uso](/recursos/diagrama_uc.jpg)
+I am passionate in playing with pixels, creating attractive designs which interact well with the user and love developing web apps. Have a good background in web design and development. Also having wonderful working experience with various interesting projects and participated in the development of the products to provide end to end solutions.
 
 
-## Descrição textual dos diagramas de casos de uso
-
-As sequências de eventos são dividas em típicas e alternativas.
-
-
-### UC1
-Identificação: UC1.
-Caso de uso: Criação de conta de usuário.
-Ator: Usuário.
-Pré condições: Ter CPF com 11 dígitos, não possuir CPF cadastrado no banco de dados.
-Pós condições: O sistema salva os dados do novo usuário no banco de dados.
-#### Sequência típica de eventos:
-##### Ator
-1. Usuário entra no sistema.
-2. Usuário clica no botão “Cadastrar novo usuário”.
-4. Usuário preenche todas informações do formulário.
-5. Usuário clica no botão “Realizar cadastro”.
-
-##### Sistema
-3. Sistema abre o formulário de cadastro de novo usuário.
-6. Sistema salva as informações preenchidas pelo usuário no banco de dados.
-
-
-#### Sequência típica de eventos:
-##### Ator
-1. Usuário entra no sistema.
-2. Usuário clica no botão “Cadastrar novo usuário”.
-4. Usuário não preenche todas informações do formulário.
-5. Usuário clica no botão “Realizar cadastro”.
-
-##### Sistema
-3. Sistema abre o formulário de cadastro.
-6. Sistema informa erro e avisa quais
+## License
+Released under the MIT license.
+# mangapp-new
